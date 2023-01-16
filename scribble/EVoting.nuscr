@@ -1,0 +1,15 @@
+global protocol EVoting(reliable role V, reliable role S) {
+	Authenticate(String) from V to S;
+	choice at S {
+    Ok(String) from S to V;
+    choice at V {
+      Yes(String) from V to S;
+      Result(Int) from S to V;
+    } or {
+      No(String) from V to S;
+      Result(Int) from S to V;
+    }
+	} or {
+   	Reject(String) from S to V;
+	}
+}

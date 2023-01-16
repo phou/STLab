@@ -1,0 +1,16 @@
+global protocol Calc(reliable role P, reliable role Q) {
+	rec Loop {
+		choice at Q {
+			sum(pair) from Q to P ;
+			result(int) from P to Q ;
+			continue Loop ;
+		} or {
+			multiply(pair) from Q to P;
+			result(int) from P to Q ;
+			continue Loopy ;
+		} or {
+			quit from P to Q ;
+			terminate from P to Q ;
+		}
+	}
+}
