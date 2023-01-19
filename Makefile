@@ -8,4 +8,4 @@ install: build
 	ln -s ~/.cabal/bin/HsScribble HsScribble
 
 clean:
-	rm -rf dist-newstyle scala
+	rm -rf dist-newstyle scala HsScribble
