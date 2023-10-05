@@ -7,7 +7,7 @@ global protocol Calc(reliable role P, reliable role Q) {
 		} or {
 			multiply(pair) from Q to P;
 			result(int) from P to Q ;
-			continue Loopy ;
+			continue Loop ;
 		} or {
 			quit from P to Q ;
 			terminate from P to Q ;
