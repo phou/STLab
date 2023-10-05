@@ -5,11 +5,11 @@ global protocol Calc(reliable role S, reliable role Cl) {
 			result(int) from S to Cl ;
 			continue Loop ;
 		} or {
-			multiply(pair) from Cl to S;
+			multiply(pair) from S to Cl;
 			result(int) from S to Cl ;
 			continue Loop ;
 		} or {
-			quit from S to Cl ;
+			quit from Cl to S ;
 			terminate from S to Cl ;
 		}
 	}
